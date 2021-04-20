@@ -25,7 +25,15 @@ def signup():
 
 @app.route("/terms", methods=["GET","POST"])
 def terms():
-    return render_template("term.html")
+    return render_template("terms.html")
+
+@app.route("/rpassword", methods=["GET","POST"])
+def rpassword():
+    return render_template("rpassword.html")
+
+@app.route("/inicio", methods={"GET","POST"})
+def inicio():
+    return render_template("inicio.html")
 
 
 if __name__ == "__main__":
