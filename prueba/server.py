@@ -43,5 +43,9 @@ def music():
 def movies():
     return render_template("indexMovies.html")
 
+@app.route("/mymusic", methods={"GET","POST"})
+def mymusic():
+    return render_template("mymusic.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)
