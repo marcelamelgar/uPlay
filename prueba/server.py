@@ -39,6 +39,9 @@ def inicio():
 def music():
     return render_template("indexMusic.html")
 
+@app.route("/movies", methods={"GET","POST"})
+def movies():
+    return render_template("indexMovies.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)
