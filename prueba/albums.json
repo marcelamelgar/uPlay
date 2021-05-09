@@ -1,0 +1,40 @@
+{
+    "headers": {
+        "0": "name",
+        "1": "artist",
+        "2": "year",
+        "3": "genre"
+    },
+    "albums":[
+        {
+            "name": "Tight",
+            "artist": "Mindless Self Indulgence",
+            "year": "1999",
+            "genre": "Electropunk"
+        },
+        {
+            "name": "The Black Parade",
+            "artist": "My Chemical Romance",
+            "year": "2006",
+            "genre": "Alternative Rock"
+        },
+        {
+            "name": "Plastic Beach",
+            "artist": "Gorillaz",
+            "year": "2010",
+            "genre": "Alternative"
+        },
+        {
+            "name": "EL ÚLTIMO TOUR DEL MUNDO",
+            "artist": "Bad Bunny",
+            "year": "2020",
+            "genre": "Trap"
+        },
+        {
+            "name": "Dopamina",
+            "artist": "Manuel Turizo",
+            "year": "2021",
+            "genre": "Reggaeton"
+        }
+    ]
+}
