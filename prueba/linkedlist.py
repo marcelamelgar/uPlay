@@ -1,10 +1,8 @@
-from _typeshed import SupportsNoArgReadline
-
-
 class Cancion:
-    def __init__(self, nombre, artista, album):
-        self.nombre = nombre
-        self.artista = artista
+    def __init__(self, id,nombre, artista, album):
+        self.id = id
+        self.name = nombre
+        self.artist = artista
         self.album = album
         self.previous = None
         self.next = None

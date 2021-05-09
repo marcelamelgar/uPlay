@@ -17,24 +17,30 @@ environment = Environment(loader = templates)
 app = Flask(__name__)
 
 def cargarCanciones():
+    global contadorCanciones
     with open("c:/Users/mepg1/Documents/GitHub/uPlay/prueba/music.json") as json_file:
         my_json = json.load(json_file)
     for i in my_json["songs"]:
-        canciones.append(Cancion(i.name,i.artist,i.album))
+        values = list(i.values())
+        canciones.append(Cancion(values[0],values[1],values[2],values[3]))
         contadorCanciones += 1
 
 def cargarAlbumes():
+    global contadorAlbumes
     with open("c:/Users/mepg1/Documents/GitHub/uPlay/prueba/albums.json") as json_file:
         my_json = json.load(json_file)
-    for i in my_json["albumes"]:
-        albumes.append(Album(i.name,i.artist,i.album))
+    for i in my_json["albums"]:
+        values = list(i.values())
+        albumes.append(Album(values[0],values[1],values[2],values[3]))
         contadorAlbumes += 1
 
-def cargarCanciones():
+def cargarArtistas():
+    global contadorArtistas
     with open("c:/Users/mepg1/Documents/GitHub/uPlay/prueba/artists.json") as json_file:
         my_json = json.load(json_file)
     for i in my_json["artists"]:
-        artistas.append(Artist(i.name,i.artist,i.album))
+        values = list(i.values())
+        artistas.append(Artist(values[0]))
         contadorArtistas += 1
 
 @app.route("/", methods=["GET", "POST"])
