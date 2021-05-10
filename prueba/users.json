@@ -1,0 +1,20 @@
+{
+    "headers": {
+        "0": "cardName",
+        "1": "cardNum",
+        "2": "expMonth",
+        "3": "expYear",
+        "4": "cvv",
+        "5": "name",
+        "6": "email",
+        "7": "password",
+        "8": "confirmPassword",
+        "9": "plan",
+        "10": "birth"
+    },
+    "users":[
+        {
+            
+        }
+    ]
+}

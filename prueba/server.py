@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for, redirect
 from jinja2 import Template, FileSystemLoader, Environment
+import json
 
 domain = "0.0.0.0:5000/"
 templates = FileSystemLoader('templates')
@@ -21,7 +22,39 @@ def login():
 
 @app.route("/signup", methods=["GET","POST"])
 def signup():
+    if request.method == 'POST':
+        print("1")
+        cardName = request.form["cname"]
+        cardNum = request.form["ccnum"]
+        expMonth = request.form["expmonth"]
+        expYear = request.form["expyear"]
+        cvv = request.form["cvv"]
+        name = request.form["firstname"]
+        email = request.form["email"]
+        password = request.form["pass"]
+        confirmPassword = request.form["cpass"]
+        plan = request.form["plan"]
+        birth = request.form["birth"]
+        data = {}
+        data['users'] = []
+        data['users'].append({
+            'cardName': cardName,
+            'cardNum': cardNum,
+            'expMonth': expMonth,
+            'expYear': expYear,
+            'cvv': cvv,
+            'name': name,
+            'email': email,
+            'password': password,
+            'confirmPassword': confirmPassword,
+            'plan': plan,
+            'birth': birth
+        })
+        with open('c:/Users/mepg1/Documents/GitHub/uPlay/prueba/users.json','w') as outfile:
+            json.dump(data, outfile)
+        return render_template("login.html")
     return render_template("signup.html")
+    print("2")
 
 @app.route("/terms", methods=["GET","POST"])
 def terms():
