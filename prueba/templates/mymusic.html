@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+        <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+        .w3-bar-block .w3-bar-item {padding:20px}
+        </style>
+        <title>My Music</title>
+      </head>
 
 <style>
     * {
@@ -7,10 +18,12 @@
     box-sizing: border-box;
 }
 body {
-    background: linear-gradient(to left, #7700aa, #8800ff);
+    background-image: url('/static/cuarto.png');
+    background-size: 100% 100%;
     text-align:center;
     color:#fff;
 }
+
 h3{
     text-shadow:1px 1px 1px #fff;
 }
@@ -131,6 +144,39 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 .container-audio .colum1:nth-of-type(20) .row {
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #8B008B;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #9400D3;
+  color: white;
+}
+
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border: none;
+  font-size: 17px;
 }
 
 @-webkit-keyframes Rofa {
@@ -280,14 +326,93 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
 }
 </style>
 
+<!-- navbar -->
+<div class="topnav">
+    <a href="/music">Home</a>
+    <a  href="/inicio">Switch Entertainmet</a>
+    <a href="/mymusic" class="active">My Music</a>
+    <input type="text" placeholder="Search..">
+  
+  </div>
+
+<!-- My Photos -->
+<h1 style="color:white;" class="center"> My Music </h1>
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px" id="mymusic">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="topArtists">
+    <div class="w3-quarter">
+        <a href="#playing"> 
+      <img src="/static/jamaica.jpeg" alt="jamaica" style="width:100%">
+      </a>
+      <h3 style="color:white;">Agua de Jamaica</h3>
+      <p style="color:white;">Maluma</p>
+    </div>
+    <div class="w3-quarter">
+        <a href="#playing">
+      <img src="/static/devil.jpg" alt="devil" style="width:100%">
+      </a>
+      <h3 style="color:white;">Dancing with the Devil</h3>
+      <p style="color:white;">Demi Lovato</p>
+    </div>
+    <div class="w3-quarter">
+        <a href="#playing">
+      <img src="/static/lenny.jpeg" alt="lenny" style="width:100%">
+      </a>
+      <h3 style="color:white;">Me Enamoras</h3>
+      <p style="color:white;">Lenny Tavarez ft. Ken-y</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="/static/montero.jpeg" alt="montero" style="width:100%">
+      <h3 style="color:white;">Montero Call Me By Your Name</h3>
+      <p style="color:white;">Lil Nas X</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="topArtists">
+    <div class="w3-quarter">
+        <a href="#playing">
+      <img src="/static/tiempo.jpeg" alt="ozuna" style="width:100%">
+        </a>
+      <h3 style="color:white;">Tiempo</h3>
+      <p style="color:white;">Ozuna</p>
+    </div>
+    <div class="w3-quarter">
+        <a href="#playing">
+      <img src="/static/panic.jpeg" alt="panic" style="width:100%">
+      </a>
+      <h3 style="color:white;">Emperor's New Clothes</h3>
+      <p style="color:white;">Panic! At The Disco</p>
+    </div>
+    <div class="w3-quarter">
+        <a href="#playing">
+      <img src="/static/billie.jpeg" alt="billie" style="width:100%">
+      </a>
+      <h3 style="color:white;">Your Power</h3>
+      <p style="color:white;">Billie Eilish</p>
+    </div>
+    <div class="w3-quarter">
+        <a href="#playing">
+      <img src="/static/ehrling.jpeg" alt="erhling" style="width:100%">
+      </a>
+      <h3 style="color:white;">Broken Glass</h3>
+      <p style="color:white;">Ehrling</p>
+    </div>
+  </div>
+</div>
+
 <!-- Called of font style  file -->
 
 <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
 
 
     <h2>You are playing...</h2>
-    <div class="container-audio">
-        <audio controls  loop autoplay>
+    <div class="container-audio" id="playing">
+        <audio controls loop >
                    <source src="/static/Lil Nas X - MONTERO (Call Me By Your Name) (Lyrics).ogg" type="audio/ogg">
                </audio>
     </div>
