@@ -24,15 +24,15 @@ def login():
 def signup():
     if request.method == 'POST':
         print("1")
-        cardName = request.form["cname"]
-        cardNum = request.form["ccnum"]
+        cardName = request.form["cardname"]
+        cardNum = request.form["cardnumber"]
         expMonth = request.form["expmonth"]
         expYear = request.form["expyear"]
         cvv = request.form["cvv"]
         name = request.form["firstname"]
         email = request.form["email"]
-        password = request.form["pass"]
-        confirmPassword = request.form["cpass"]
+        password = request.form["password"]
+        confirmPassword = request.form["confirmpassword"]
         plan = request.form["plan"]
         birth = request.form["birth"]
         data = {}
