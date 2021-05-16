@@ -26,7 +26,7 @@ def login():
         for i in my_json["Users"]:
             values = list(i.values())
             if values[1] == email and values[2] == password:
-                return render_template("inicio.html")
+                return redirect(url_for("inicio.html"))
     return render_template("login.html")
 
 @app.route("/signup", methods=["GET","POST"])
