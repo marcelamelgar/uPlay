@@ -1,1 +1,17 @@
-{"users": [{"cardName": "hoasdfkj", "cardNum": "1234-1234-1235", "expMonth": "May", "expYear": "2023", "cvv": "710", "name": "Mario Pisquiy", "email": "mario897071@gmail.com", "password": "hoal3", "confirmPassword": "hoal3", "plan": "free", "birth": "jan"}]}
+{
+    "headers":{
+        "0":"name",
+        "1":"email",
+        "2":"password",
+        "3":"plan",
+        "4":"birth",
+        "5":"cardName",
+        "6":"cardNum",
+        "7":"expMonth",
+        "8":"expYear",
+        "9":"cvv"
+    },
+    "Users":[
+
+    ]
+}

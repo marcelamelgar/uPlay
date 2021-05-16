@@ -23,7 +23,6 @@ def login():
 @app.route("/signup", methods=["GET","POST"])
 def signup():
     if request.method == 'POST':
-        print("1")
         cardName = request.form["cardname"]
         cardNum = request.form["cardnumber"]
         expMonth = request.form["expmonth"]
@@ -35,26 +34,13 @@ def signup():
         confirmPassword = request.form["confirmpassword"]
         plan = request.form["plan"]
         birth = request.form["birth"]
-        data = {}
-        data['users'] = []
-        data['users'].append({
-            'cardName': cardName,
-            'cardNum': cardNum,
-            'expMonth': expMonth,
-            'expYear': expYear,
-            'cvv': cvv,
-            'name': name,
-            'email': email,
-            'password': password,
-            'confirmPassword': confirmPassword,
-            'plan': plan,
-            'birth': birth
-        })
+        with open("c:/Users/mepg1/Documents/GitHub/uPlay/prueba/users.json") as json_file:
+            my_json = json.load(json_file)
+            my_json["Users"].append({"name":name,"email":email,"password":password,"plan":plan,"birth":birth,"cardName":cardName,"cardNum":cardNum,"expMonth":expMonth,"expYear":expYear,"cvv":cvv})
         with open('c:/Users/mepg1/Documents/GitHub/uPlay/prueba/users.json','w') as outfile:
-            json.dump(data, outfile)
+            json.dump(my_json, outfile)
         return render_template("login.html")
     return render_template("signup.html")
-    print("2")
 
 @app.route("/terms", methods=["GET","POST"])
 def terms():
