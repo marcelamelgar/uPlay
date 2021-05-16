@@ -169,7 +169,7 @@ input[type=text], select, textarea {
 <!-- Log in -->
 <br><br><br>
 <div class="container">
-  <form action="/action_page.php">
+  <form method="POST" action="">
     <div class="row">
       <h2 style="text-align:center">Login</h2>
       <div class="vl">
@@ -196,11 +196,9 @@ input[type=text], select, textarea {
         <input type="text" name="username" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
         <p>
-            <center>
-            <a href="/inicio" class="w3-button w3-black" type="submit">
-              <em  role="button"></em> Log In
-            </a>
-            </center>
+          <center>
+            <button type="submit" class="w3-button w3-black">Log In</button>
+          </center>
           </p>
       </div>
       

@@ -18,6 +18,15 @@ def contact():
 
 @app.route("/login", methods=["GET","POST"])   
 def login():
+    if request.method == 'POST':
+        email = request.form["username"]
+        password = request.form["password"]
+        with open("c:/Users/mepg1/Documents/GitHub/uPlay/prueba/users.json") as json_file:
+            my_json = json.load(json_file)
+        for i in my_json["Users"]:
+            values = list(i.values())
+            if values[1] == email and values[2] == password:
+                return render_template("inicio.html")
     return render_template("login.html")
 
 @app.route("/signup", methods=["GET","POST"])
@@ -39,7 +48,7 @@ def signup():
             my_json["Users"].append({"name":name,"email":email,"password":password,"plan":plan,"birth":birth,"cardName":cardName,"cardNum":cardNum,"expMonth":expMonth,"expYear":expYear,"cvv":cvv})
         with open('c:/Users/mepg1/Documents/GitHub/uPlay/prueba/users.json','w') as outfile:
             json.dump(my_json, outfile)
-        return render_template("login.html")
+        return redirect(url_for('login'))
     return render_template("signup.html")
 
 @app.route("/terms", methods=["GET","POST"])
