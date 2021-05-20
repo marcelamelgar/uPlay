@@ -343,27 +343,27 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
   <div class="w3-row-padding w3-padding-16 w3-center" id="topArtists">
     <div class="w3-quarter">
         <a href="#playing"> 
-      <img src="/static/jamaica.jpeg" alt="jamaica" style="width:100%">
+      <img src="/static/jamaica.jpeg" alt="jamaica" style="width:100%" onclick="onClick(this)">
       </a>
       <h3 style="color:white;">Agua de Jamaica</h3>
       <p style="color:white;">Maluma</p>
     </div>
     <div class="w3-quarter">
         <a href="#playing">
-      <img src="/static/devil.jpg" alt="devil" style="width:100%">
+      <img src="/static/devil.jpg" alt="devil" style="width:100%" onclick="onClick(this)">
       </a>
       <h3 style="color:white;">Dancing with the Devil</h3>
       <p style="color:white;">Demi Lovato</p>
     </div>
     <div class="w3-quarter">
         <a href="#playing">
-      <img src="/static/lenny.jpeg" alt="lenny" style="width:100%">
+      <img src="/static/lenny.jpeg" alt="lenny" style="width:100%" onclick="onClick(this)">
       </a>
       <h3 style="color:white;">Me Enamoras</h3>
       <p style="color:white;">Lenny Tavarez ft. Ken-y</p>
     </div>
     <div class="w3-quarter">
-      <img src="/static/montero.jpeg" alt="montero" style="width:100%">
+      <img src="/static/montero.jpeg" alt="montero" style="width:100%" onclick="onClick(this)">
       <h3 style="color:white;">Montero Call Me By Your Name</h3>
       <p style="color:white;">Lil Nas X</p>
     </div>
@@ -376,28 +376,28 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
   <div class="w3-row-padding w3-padding-16 w3-center" id="topArtists">
     <div class="w3-quarter">
         <a href="#playing">
-      <img src="/static/tiempo.jpeg" alt="ozuna" style="width:100%">
+      <img src="/static/tiempo.jpeg" alt="ozuna" style="width:100%" onclick="onClick(this)">
         </a>
       <h3 style="color:white;">Tiempo</h3>
       <p style="color:white;">Ozuna</p>
     </div>
     <div class="w3-quarter">
         <a href="#playing">
-      <img src="/static/panic.jpeg" alt="panic" style="width:100%">
+      <img src="/static/panic.jpeg" alt="panic" style="width:100%" onclick="onClick(this)">
       </a>
       <h3 style="color:white;">Emperor's New Clothes</h3>
       <p style="color:white;">Panic! At The Disco</p>
     </div>
     <div class="w3-quarter">
         <a href="#playing">
-      <img src="/static/billie.jpeg" alt="billie" style="width:100%">
+      <img src="/static/billie.jpeg" alt="billie" style="width:100%" onclick="onClick(this)">
       </a>
       <h3 style="color:white;">Your Power</h3>
       <p style="color:white;">Billie Eilish</p>
     </div>
     <div class="w3-quarter">
         <a href="#playing">
-      <img src="/static/ehrling.jpeg" alt="erhling" style="width:100%">
+      <img src="/static/ehrling.jpeg" alt="erhling" style="width:100%" onclick="onClick(this)">
       </a>
       <h3 style="color:white;">Broken Glass</h3>
       <p style="color:white;">Ehrling</p>
@@ -405,15 +405,15 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
   </div>
 </div>
 
-<!-- Called of font style  file -->
-
-<link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
-
-
-    <h2>You are playing...</h2>
-    <div class="container-audio" id="playing">
-        <audio controls loop >
-                   <source src="/static/Lil Nas X - MONTERO (Call Me By Your Name) (Lyrics).ogg" type="audio/ogg">
+<!-- Modal Tiempo-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">X</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image" alt="image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+      <div class="container-audio">
+        <audio controls loop>
+            <source src="/static/Ozuna - TIEMPO (LetraLyrics).ogg" type="audio/ogg">  
                </audio>
     </div>
     <div class="container-audio">
@@ -462,30 +462,37 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
         <div class="colum1">
             <div class="row"></div>
         </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
-        <div class="colum1">
-            <div class="row"></div>
-        </div>
     </div>
+    </div>
+  </div>
+
+
+
+<script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    
+    
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+    
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+    
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+    </script>
 
 </html>
